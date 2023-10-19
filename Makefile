@@ -1,4 +1,4 @@
-SRC		=	printf.c ft_putstr.c
+SRC		=	printf.c ft_putstr.c ft_putchar.c
 
 SRCS	= ${addprefix ${PRE}, ${SRC}}
 

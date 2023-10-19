@@ -6,13 +6,13 @@
 /*   By: omfelk <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 18:42:26 by omfelk            #+#    #+#             */
-/*   Updated: 2023/10/19 09:50:31 by omfelk           ###   ########.fr       */
+/*   Updated: 2023/10/19 16:37:09 by omfelk           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-unsigned int	ft_putstr_fd(char *s)
+unsigned int	ft_putstr(char *s)
 {
 	size_t	i;
 

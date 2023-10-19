@@ -6,20 +6,31 @@
 /*   By: omfelk <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 09:36:18 by omfelk            #+#    #+#             */
-/*   Updated: 2023/10/19 12:28:43 by omfelk           ###   ########.fr       */
+/*   Updated: 2023/10/19 16:41:24 by omfelk           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
+#include <stdarg.h>
 
-int ft_printf(const char *s)
+int	ft_printf(const char *text, ...)
 {
-   ft_putstr((char *)s);
-   return (0);
+	va_list		args;
+	int			i;
+
+	i = 0;
+	va_start(args, text);
+	while (text[i])
+	{
+		ft_putchar(text[i]);
+		i++;
+	}
+	va_end(args);
+	return (0);
 }
 
-int main()
+int	main(void)
 {
-    ft_printf("test");
-    return (0);
+	ft_printf("test");
+	return (0);
 }
