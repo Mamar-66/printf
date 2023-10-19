@@ -6,11 +6,11 @@
 /*   By: omfelk <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 09:36:18 by omfelk            #+#    #+#             */
-/*   Updated: 2023/10/19 09:50:20 by omfelk           ###   ########.fr       */
+/*   Updated: 2023/10/19 12:28:43 by omfelk           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/ft_printf.h"
+#include "../include/ft_printf.h"
 
 int ft_printf(const char *s)
 {
