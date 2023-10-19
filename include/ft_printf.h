@@ -6,11 +6,13 @@
 /*   By: omfelk <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 14:53:02 by omfelk            #+#    #+#             */
-/*   Updated: 2023/10/18 14:56:05 by omfelk           ###   ########.fr       */
+/*   Updated: 2023/10/19 09:44:28 by omfelk           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
+
+unsigned int    ft_putstr(char *s);
 
 #endif

@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   printf.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: omfelk <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/09 10:00:51 by omfelk            #+#    #+#             */
-/*   Updated: 2023/10/09 18:43:58 by omfelk           ###   ########.fr       */
+/*   Created: 2023/10/19 09:36:18 by omfelk            #+#    #+#             */
+/*   Updated: 2023/10/19 09:50:20 by omfelk           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "include/ft_printf.h"
 
-void	ft_putchar_fd(char c, int fd)
+int ft_printf(const char *s)
 {
-	write(fd, &c, 1);
+   ft_putstr((char *)s);
+   return (0);
 }
-/*
-int	main()
+
+int main()
 {
-	ft_putchar_fd('a', 1);
-	return (0);
-}*/
+    ft_printf("test");
+    return (0);
+}
