@@ -1,4 +1,7 @@
-SRC		=	printf.c ft_putstr.c ft_putchar.c ft_putnbr.c ft_putnbr_base.c
+SRC		=	printf.c ft_putstr.c \
+			ft_putchar.c ft_putnbr.c \
+			ft_putnbr_unsigned.c ft_putnbr_base.c \
+			ft_putptr.c
 
 SRCS	= ${addprefix ${PRE}, ${SRC}}
 

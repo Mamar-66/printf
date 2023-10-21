@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
+/*   ft_putptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: omfelk <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/20 15:49:41 by omfelk            #+#    #+#             */
-/*   Updated: 2023/10/21 10:01:24 by omfelk           ###   ########.fr       */
+/*   Updated: 2023/10/21 10:54:15 by omfelk           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
-unsigned int	baselen_verif(char *base)
+static unsigned int	baselen_verif(char *base)
 {
 	unsigned int	i;
 	unsigned int	j;
@@ -40,7 +40,8 @@ unsigned int	baselen_verif(char *base)
 		return (0);
 }
 
-int	conver(int len, unsigned int nb, char *text, int *size)
+static int	conver(unsigned int len, unsigned long long nb,
+									char *text, int *size)
 {
 	if (nb >= (unsigned int)len)
 	{
@@ -55,12 +56,17 @@ int	conver(int len, unsigned int nb, char *text, int *size)
 	return (*size);
 }
 
-int	ft_putnbr_base(int nbr, char *base)
+int	ft_putptr(unsigned long long nbr, char *base)
 {
-	int	len;
-	int	size;
+	unsigned int	len;
+	int				size;
 
-	size = 0;
+	if (nbr == 0)
+	{
+		size = ft_putstr("(nil)");
+		return (size);
+	}
+	size = ft_putstr("0x");
 	len = baselen_verif(base);
 	if (len != 0)
 		conver(len, nbr, base, &size);

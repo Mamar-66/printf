@@ -6,7 +6,7 @@
 /*   By: omfelk <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 09:36:18 by omfelk            #+#    #+#             */
-/*   Updated: 2023/10/20 18:34:56 by omfelk           ###   ########.fr       */
+/*   Updated: 2023/10/21 10:57:58 by omfelk           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,13 @@ int	type_format(va_list args, const char format)
 	if (format == 'c')
 		size += ft_putchar(va_arg(args, int));
 	else if (format == 'p')
-	{
-		size = ft_putstr("0x");
-		size += ft_putnbr_base(va_arg(args, unsigned long long), "0123456789abcdef");
-	}
+		size += ft_putptr(va_arg(args, unsigned long long), "0123456789abcdef");
 	else if (format == 's')
 		size += ft_putstr(va_arg(args, char *));
 	else if (format == 'd' || format == 'i')
 		size += ft_putnbr(va_arg(args, int));
+	else if (format == 'u')
+		size += ft_putnbr_unsigned(va_arg(args, unsigned int));
 	else if (format == 'x')
 		size += ft_putnbr_base(va_arg(args, int), "0123456789abcdef");
 	else if (format == 'X')
@@ -59,16 +58,21 @@ int	ft_printf(const char *text, ...)
 	va_end(args);
 	return (total_size);
 }
-/*
+
 int	main(void)
 {
 	int		v;
 	int		f;
-	char	*c = " | dans le ptr | ";
+	char	*c;
 
-	f = ft_printf("caract = %c string =  %s d = %d i = %i hexa %x HEXA %X le %% le p = %p\n", 'c', "| le s |", INT_MAX, INT_MIN, 22255, -200, c);
-	v = printf("caract = %c string =  %s d = %d i = %i hexa %x HEXA %X le %% le p = %p\n", 'c', "| le s |", INT_MAX, INT_MIN, 22255, -200, c);
+	c = NULL;
+	f = ft_printf("f : caract = %c string =  %s ptr = %p\n", 'c', c, NULL);
+	f += ft_printf("f : d = %d i = %i u %u\n", 0, INT_MIN, 0);
+	f += ft_printf("f : x = %x X = %X le %%\n", 255, 255);
+	v = printf("v : caract = %c string =  %s ptr = %p\n", 'c', c, NULL);
+	v += printf("v : d = %d i = %i u %u\n", 0, INT_MIN, 0);
+	v += printf("v : x = %x X = %X le %%\n", 255, 255);
 	printf("f = %d\n", f);
 	printf("v = %d\n", v);
 	return (0);
-}*/
+}

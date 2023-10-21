@@ -1,34 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_unsigned.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: omfelk <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/09 18:42:26 by omfelk            #+#    #+#             */
-/*   Updated: 2023/10/21 10:49:18 by omfelk           ###   ########.fr       */
+/*   Created: 2023/10/09 19:09:46 by omfelk            #+#    #+#             */
+/*   Updated: 2023/10/21 10:33:20 by omfelk           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	ft_putstr(char *s)
+static void	ft_write(unsigned int n)
 {
-	size_t	i;
+	char	c;
 
-	i = 0;
-	if (s != NULL)
+	if (n > 9)
 	{
-		while (s[i] != '\0')
-		{
-			write(1, &s[i], 1);
-			i++;
-		}
+		ft_write((n / 10));
+		ft_write((n % 10));
 	}
 	else
 	{
-		write(1, "(null)", 6);
-		i += 6;
+		c = n + '0';
+		write(1, &c, 1);
+	}
+}
+
+int	ft_putnbr_unsigned(unsigned int n)
+{
+	int		i;
+
+	i = 0;
+	ft_write(n);
+	if (n == 0)
+		i++;
+	while (n > 0)
+	{
+		i++;
+		n = n / 10;
 	}
 	return (i);
 }
