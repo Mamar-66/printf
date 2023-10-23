@@ -6,7 +6,7 @@
 /*   By: omfelk <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 09:36:18 by omfelk            #+#    #+#             */
-/*   Updated: 2023/10/21 10:57:58 by omfelk           ###   ########.fr       */
+/*   Updated: 2023/10/23 11:55:39 by omfelk           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,14 @@ int	ft_printf(const char *text, ...)
 	va_end(args);
 	return (total_size);
 }
-
+/*
 int	main(void)
 {
 	int		v;
 	int		f;
+
+	v = 0;
+	f = 0;
 	char	*c;
 
 	c = NULL;
@@ -75,4 +78,4 @@ int	main(void)
 	printf("f = %d\n", f);
 	printf("v = %d\n", v);
 	return (0);
-}
+}*/
